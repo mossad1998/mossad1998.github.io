@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Self-balancing Motorcycle</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+				</header>
+				<nav id="nav">
+					<ul>
+					</ul>
+				</nav>
+				<footer>
+					<div class="copy-box">COPIED!</div> 
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto: mohamed.eldebany@outlook.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="bottom" >
+									<img src="../images/selfBalancingMotorcycleBanner.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h3>OS Self-balancing Motorcycle</h3>
+									</header>
+									<p>
+										This is a comprehensive study for all aspects of the design of a two-wheel self-balanced
+										vehicle based on gyroscopic effect as a graduation project for my senior year in
+										Mechatronics and Automation department at Faculty of engineering - Ain shams University.
+										<ul class="feature-icons">
+											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Balancing_Model" target="_blank">GitHub</a></li>
+										</ul>
+										This project aims to have a new type of vehicle, a single seat vehicle. designed to be
+										the bridge between cars and motorcycle, designed to satisfy the need of the daily
+										commuter & meet to the market demand and environment essential need for reducing
+										the contamination so that vehicle is going to be fully electrically powered which
+										would help in cleaner environment and would result also in a cost-effective product
+										compared to its fuel versions.
+
+										<br /><br />The balancing system is based on the concept of applying a single gimbal control moment
+										gyroscope (SGCMG). it’s important to understand how gyroscope works and
+										how to get the best use of it.
+
+										<br /><br />
+
+										<img src="../images/gyro_assembly.jpg" alt="" />
+
+										<br /><br />Single Gimbal Control Moment Gyroscope (SGCMG) is a kind of momentum exchange
+										actuator .Thanks to its powerful momentum storage capacity and torque amplification
+										ability over Reaction Wheel (RW), we can use it to generate a torque foe our balancing
+										purpose against any unexpected and unwanted inclination in our vehicle.
+
+										<br /><br />Self-balancing Mechanism Architecture:
+										<br />
+
+										<img src="../images/Balancing_Diagram_V2.jpg" alt="" />
+
+
+										<br /><br />Architecture Explanation:
+										<br /> 1.Gyroscope BLDC Motors are responsible for accelerating gimbal to a certain velocity up tp 3000 r.p.m.
+										<br /> 2.Gyroscope ESCs are responsible for controlling the BLDC motors.
+										<br /> 3.Gyroscope Encoders are responsible for measuring the BLDC motor speed.
+										<br /> 4.Gyroscope DC Motors are responsible for rotating the gimbal to a certain angle to counter the disturbance.
+										<br /> 5.Gyroscope DC Controllers are responsible for controlling the DC motors.
+										<br /> 6.Rotary Potentiometers are responsible for reading the gimbal angle.
+										<br /> 7.IMU is responsible for reading the inclination angle.
+										<br /> 8.Gyroscope controller is tiva c (ARM Cortex-M4F based) used freeRTOS to handle different tasks.
+										<br /> 9.Fuse box to protect different electrical elements from over current.
+
+
+										<br /><br />Two parameters to be controlled:
+										<br />1.Gimbal Speed (must be fixed at certain point respect to the load)
+										<br />2.Gimbal Angle (gimbal must be rotated with certain angle to counter the disturbance)
+
+										<br /><br />Applying System Identification:
+										<br />Constructing mathematical models of dynamic systems using measurements of the input and output signals of the system.
+
+										<br /><br />
+										<br />Input is Ramp signal<br />
+										<img src="../images/input_signal_system_iden.jpg" alt="" />
+
+										<br /><br />
+										<br />Output is the motor speed signal (need further processing and filtration)<br />
+										<img src="../images/output_signal_system_iden.jpg" alt="" />
+
+										<br /><br />
+										<br />Getting the transfer function (using matlab system identification toolbox)<br />
+										<img src="../images/tansfer_function_system_iden.jpg" alt="" />
+
+									</p>
+										<div class="iframe-container">
+											<iframe width="720" height="480" src="https://www.youtube.com/embed/9Fn93BKffVo"
+											title="YouTube video player" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										</div>
+
+										<br/><br/>
+										<ul><a href="../index.html#three" class="button">Back</a></ul>
+
+								</div>
+							</section>
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Earth Rover</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
+					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+					   I hope you like it!</p>
+				</header>
+				<nav id="nav">
+					<ul>
+					</ul>
+				</nav>
+				<footer>
+					<div class="copy-box">COPIED!</div> 
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto: mohamed.eldebany@outlook.com" target="_blank" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+							<section id="one">
+								<div class="image main" data-position="bottom" >
+									<img src="../images/protocols.jpg" alt="" />
+								</div>
+								<div class="container">
+									<header class="major">
+										<h2>Earth Rover</h2>
+									</header>
+									<p>
+										Earth rover is differential robot which can be controlled through The internet using ssh connection.
+										the robot is equiped with two cameras allowing it to perform vision tasks, e.g. face recognition.
+										it is also able to detect fire and warn the residenents with both sound alarm and e-mail.
+
+										<ul class="feature-icons">
+											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Earth_Rover" target="_blank">GitHub</a></li>
+										</ul>
+										Earth rover software consists of two major sub-systems interacting with each other in real time:
+										<br /> --->Master sub-system written in python and runs on raspberry pi 3.
+										<br /> --->Slave sub-system wriiten in C++ and runs on Tiva-C ARM Cortex-M4F based.
+
+										<br /><br />
+
+										Master sub-system main tasks:
+										<br />1. Receive control commands as str through SSH port.
+										<br />2. Parse the control commands and pass it to the slave sub-system though UART protocal.
+										<br />3. Run and maintain face recognition service.
+										<br />4. Run and maintain fire detection service.
+										<br />5. Run and maintain the warnning and e-mail services.
+
+										<br /><br />
+
+										Slave sub-system main tasks:
+										<br />1. Recieve the parsed control commands from the master sub-system though UARD protocal and reply with ack feedback.
+										<br />2. Generate the required PWMs to run the motors.
+										<br />3. Determine and log the position of the robot using wheels encoders and IMU sensors.
+										<br />4. Sense the surrounding environment using infrared sensors.
+
+
+										<br /><br />Overall Architecture:
+										<br /><br />
+
+										<img src="../images/I_Mate.jpg" alt="" />
+
+
+									</p>
+									<br /><br />face Recognition:<br />
+									<div class="iframe-container">
+										<iframe width="720" height="480" src="https://www.youtube.com/embed/3xV7suU-WI8"
+												title="YouTube video player" frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+
+									<br /><br />Manual Script Demo:<br />
+
+									<div class="iframe-container">
+										<iframe width="720" height="480" src="https://www.youtube.com/embed/-b0lPcI72mY"
+												title="YouTube video player" frameborder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+									</div>
+
+									<br /><br />
+									<ul><a href="../index.html#three" class="button">Back</a></ul>
+
+
+
+								</div>
+							</section>
+
+
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="container">
+							<ul class="copyright">
+								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
