@@ -55,48 +55,58 @@
 										This data is logged  in csv files and is later used to estimate a mathematical model (transfer function) of the physical
 										system and/or validating the control process. To test the telementry system, I built my own steering-by-wire physical connection which is described below:
 
-										<ul class="feature-icons">
-											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Telemetry-Data-Logger" target="_blank">GitHub</a></li>
-										</ul>
-										steering-by-wire project aims to build a physical connector to control a wheel using 12 Volt dc motor. We test the project
-										with increasing voltages and log the responses using the telemetry and data logger system. This data is fed to matlab's 
+										<br /><br />
+
+										Steering-by-wire project aims to build a physical connector to control a wheel using 12 Volt dc motor. We test the project
+										with increasing voltages and log the responses using the telemetry and data logger system. This data is fed to matlab's
 										identification toolbox to estimate the transfer function of the system. Now that we have a mathematical model of the physical
-										process, we can either apply open loop PID and measure the accuracy using same data logger or add feedback signal and carry closed 
-										loop PID to accomplish better accuracy and adapt any disturbance and achieve better position control
+										process, we can either apply open loop PID and measure the accuracy using same data logger or add feedback signal and carry closed
+										loop PID to accomplish better accuracy and adapt any disturbance and achieve better position control.
 
+										<ul class="feature-icons">
+											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Telemetry-Data-Logger" target="_blank">Project link on Github</a></li>
+										</ul>
 
-										<br /><br />The process of system identification:
-										<br /> 1. Measure the input and output signals from your system in time or frequency domain.
-										<br /> 2. Select a model structure.
-										<br /> 3. Apply an estimation method to estimate values for the adjustable parameters in
+										<h4>The Process of System Identification:</h4>
+										1. Measure the input and output signals from your system in time or frequency domain.<br />
+										2. Select a model structure.
+										3. Apply an estimation method to estimate values for the adjustable parameters in<br />
 										the candidate model structure.
-										<br /> 4. Evaluate the estimated model to see if the model is adequate for your application needs.
+										4. Evaluate the estimated model to see if the model is adequate for your application needs.
 
+										<br /><br />
 
-										<br /><br />Output Response for Step Input:<br />
+										<h4>Output Response For Step Input:</h4>
 										<img src="../images/Response.jpg" alt="" />
 
-										<br /><br />Processing the generated data:<br />
+										<br /><br />
+
+										<h4>Processing The Generated Data:</h4>
 										<img src="../images/moving_avg_filter.jpg" alt="" />
 										<br />
 										<img src="../images/weighted_moving_avg_filter.jpg" alt="" />
 
-										<br /><br />Generating the Transfer Function:<br />
+										<br /><br />
+
+										<h4>Generating The Transfer Function:</h4>
 										<img src="../images/transfer_function.jpg" alt="" />
 
-										<br /><br />Validation Iteration:<br />
+										<br /><br />
+
+										<h4>Validation Iteration:</h4>
 										<img src="../images/open_loop.jpg" alt="" />
 
 									</p>
-									<br /><br />Closed Loop PID (the output follows the input):<br />
+									<h4>Closed Loop PID (the output follows the input):</h4>
 									<div class="iframe-container">
 										<iframe width="720" height="480" src="https://www.youtube.com/embed/zaBpgE3_Rx0"
 												title="YouTube video player" frameborder="0"
 												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									</div>
 
-									<br /><br />Steering by Wire Demo:<br />
+									<br /><br />
 
+									<h4>Steering By Wire Demo:</h4>
 									<div class="iframe-container">
 										<iframe width="720" height="480" src="https://www.youtube.com/embed/yXptVc-6PnM"
 												title="YouTube video player" frameborder="0"
