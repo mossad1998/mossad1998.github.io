@@ -52,15 +52,15 @@
 									<p>
 										This is a comprehensive study for all aspects of the design of a two-wheel self-balanced
 										vehicle based on gyroscopic effect as a graduation project for my senior year in
-										Mechatronics and Automation department at Faculty of Engineering - Ain Shams University.
+										mechatronics and automation department at faculty of engineering - Ain Shams University.
 										<ul class="feature-icons">
-											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Balancing_Model" target="_blank">GitHub</a></li>
+											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Balancing_Model" target="_blank">Project link on Github</a></li>
 										</ul>
 										This project aims to have a new type of vehicle, a single seat vehicle. Designed to be
-										the bridge between cars and motorcycle, designed to satisfy the need of the daily
-										commuter & meet to the market demand and environment essential need for reducing
-										the contamination so that vehicle is going to be fully electrically powered which
-										would help in cleaner environment and would result also in a cost-effective product
+										the bridge between cars and motorcycle, satisfy the need of the daily
+										commuter, and meet to the market demand and environment essential need for reducing
+										the pollution so, that vehicle is going to be fully electrically powered which
+										will help in cleaner environment and result in a cost-effective product
 										compared to its fuel versions.
 
 										<br /><br />The balancing system is based on the concept of applying a single gimbal control moment
@@ -76,42 +76,51 @@
 										ability over Reaction Wheel (RW), we can use it to generate a torque foe our balancing
 										purpose against any unexpected and unwanted inclination in our vehicle.
 
-										<br /><h4>Self-balancing Mechanism Architecture:</h4>
+										<br /><br />
+										<h4>Self-balancing Mechanism Architecture:</h4>
 										<img src="../images/Balancing_Diagram_V2.jpg" alt="" />
 
 
 										<br /><h4>Architecture Explanation:</h4>
-										       1.Gyroscope BLDC Motors are responsible for accelerating gimbal to a certain velocity up tp 3000 r.p.m.
-										<br /> 2.Gyroscope ESCs are responsible for controlling the BLDC motors.
-										<br /> 3.Gyroscope Encoders are responsible for measuring the BLDC motor speed.
-										<br /> 4.Gyroscope DC Motors are responsible for rotating the gimbal to a certain angle to counter the disturbance.
-										<br /> 5.Gyroscope DC Controllers are responsible for controlling the DC motors.
-										<br /> 6.Rotary Potentiometers are responsible for reading the gimbal angle.
-										<br /> 7.IMU is responsible for reading the inclination angle.
-										<br /> 8.Gyroscope controller is tiva c (ARM Cortex-M4F based) used freeRTOS to handle different tasks.
-										<br /> 9.Fuse box to protect different electrical elements from over current.
+										1.Gyroscope BLDC Motors are responsible for accelerating gimbal to a certain velocity up tp 3000 r.p.m.
+										2.Gyroscope ESCs are responsible for controlling the BLDC motors.<br />
+										3.Gyroscope Encoders are responsible for measuring the BLDC motor speed.<br />
+										4.Gyroscope DC Motors are responsible for rotating the gimbal to a certain angle to counter the disturbance.<br />
+										5.Gyroscope DC Controllers are responsible for controlling the DC motors.<br />
+										6.Rotary Potentiometers are responsible for reading the gimbal angle.<br />
+										7.IMU is responsible for reading the inclination angle.<br />
+										8.Gyroscope controller is tiva c (ARM Cortex-M4F based) used freeRTOS to handle different tasks.<br />
+										9.Fuse box to protect different electrical elements from over current.
 
+										<br />
 
-										<br /><h4>Two parameters to be controlled:</h4>
-										      1.Gimbal Speed (must be fixed at certain point respect to the load)
-										<br />2.Gimbal Angle (gimbal must be rotated with certain angle to counter the disturbance)
+										<br /><h4>Two Parameters To Be Controlled:</h4>
+										1.Gimbal Speed (must be fixed at certain point respect to the load)<br />
+										2.Gimbal Angle (gimbal must be rotated with certain angle to counter the disturbance)
 
-										<br /><br />Applying System Identification:
-										<br />Constructing mathematical models of dynamic systems using measurements of the input and output signals of the system.
+										<br />
+
+										<br /><h4>Applying System Identification:</h4>
+										Constructing mathematical models of dynamic systems using measurements of the input and output signals of the system.
 
 										<br /><br />
-										<br />Input is Ramp signal<br />
+
+										<h4>Input Is Ramp Signal</h4>
 										<img src="../images/input_signal_system_iden.jpg" alt="" />
 
 										<br /><br />
-										<br />Output is the motor speed signal (need further processing and filtration)<br />
-										<img src="../images/output_signal_system_iden.jpg" alt="" />
+
+										<h4>Output Is The Motor Speed Signal</h4>
+										<img src="../images/output_signal_system_iden.jpg" alt="" /><br />
+										Need further processing and filtration
 
 										<br /><br />
-										<br />Getting the transfer function (using matlab system identification toolbox)<br />
-										<img src="../images/tansfer_function_system_iden.jpg" alt="" />
+										<h4>Getting The Transfer Function </h4>
+										<img src="../images/tansfer_function_system_iden.jpg" alt="" /><br />
+										Using matlab system identification toolbox
 
 									</p>
+									<h4>Self-balancing Mechanism Demo:</h4>
 										<div class="iframe-container">
 											<iframe width="720" height="480" src="https://www.youtube.com/embed/9Fn93BKffVo"
 											title="YouTube video player" frameborder="0"
