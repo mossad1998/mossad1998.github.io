@@ -42,74 +42,92 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="image main" data-position="bottom" >
-									<img src="../images/protocols.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Earth Rover</h2>
-									</header>
-									<p>
-										Earth rover is differential robot which can be controlled through the internet using ssh connection.
-										The robot is equiped with two cameras allowing it to perform vision tasks, e.g. face recognition.
-										It is also, able to detect fire and warn the residenents with both sound alarm and e-mail.
+	<div class="image main" data-position="bottom">
+		<img src="../images/protocols.jpg" alt="Earth Rover Hardware Overview" />
+	</div>
+	<div class="container">
+		<header class="major">
+			<h3>Earth Rover – Internet-Controlled Differential Robot</h3>
+		</header>
+		<p>
+			The <strong>Earth Rover</strong> is a real-time, internet-controlled differential drive robot equipped with multiple vision and environmental monitoring capabilities. 
+			It can be remotely accessed and operated via <strong>SSH over Wi-Fi</strong>, allowing command and control from any networked device. 
+			Designed with safety and automation in mind, the rover integrates:
+			<ul>
+				<li>Dual camera setup for computer vision tasks including <strong>face detection/recognition</strong>.</li>
+				<li><strong>Fire detection module</strong> with audible alarm and automated email alerts.</li>
+				<li>Real-time sensor fusion for localization and obstacle sensing.</li>
+			</ul>
 
-										<ul class="feature-icons">
-											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Earth_Rover" target="_blank">Project link on Github</a></li>
-										</ul>
+			<ul class="feature-icons">
+				<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Earth_Rover" target="_blank">Project Link on GitHub</a></li>
+			</ul>
 
+			<br />
 
-										Earth rover software consists of two major sub-systems interacting with each other in real time:
-										<br /> --->Master sub-system written in python and runs on raspberry pi 3.
-										<br /> --->Slave sub-system wriiten in C++ and runs on Tiva-C ARM Cortex-M4F based.
+			The system is architected around two main subsystems running in parallel:
+			<ul>
+				<li><strong>Master Subsystem:</strong> Developed in Python, hosted on a <strong>Raspberry Pi 3</strong>.</li>
+				<li><strong>Slave Subsystem:</strong> Developed in C++, running on an <strong>Tiva-C</strong>.</li>
+			</ul>
 
-										<br /><br />
+			<br />
 
-										<h4>Master Sub-system Main Tasks:</h4>
-											1. Receive control commands as str through SSH port.
-											2. Parse the control commands and pass it to the slave sub-system though UART protocal.<br />
-											3. Run and maintain face recognition service.<br />
-											4. Run and maintain fire detection service.<br />
-											5. Run and maintain the warnning and e-mail services.
+			<h4>Master Subsystem (Raspberry Pi):</h4>
+			<ul>
+				<li>Receives control commands via SSH (Secure Shell) and parses them for execution.</li>
+				<li>Transmits structured control packets to the Tiva-C slave via <strong>UART serial protocol</strong>.</li>
+				<li>Handles high-level services:
+					<ul>
+						<li>Face recognition using OpenCV and Python DNN modules.</li>
+						<li>Fire detection using image processing and thermal thresholds.</li>
+						<li>Alerting system: triggers <strong>buzzer and automated email notifications</strong> via SMTP libraries.</li>
+					</ul>
+				</li>
+			</ul>
 
-										<br /><br />
+			<br />
 
-										<h4>Slave Sub-system Main Tasks:</h4>
-											1. Recieve the parsed control commands from the master sub-system though UARD protocal and reply with ack feedback.
-											2. Generate the required PWMs to run the motors.<br />
-											3. Determine and log the position of the robot using wheels encoders and IMU sensors.<br />
-											4. Sense the surrounding environment using infrared sensors.<br />
-
-
-										<br /><h4>Overall Architecture:</h4>
-										<br />
-
-										<img src="../images/I_Mate.jpg" alt="" />
-
-
-									</p>
-									<h4>Face Recognition:</h4>
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/3xV7suU-WI8"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
-
-									<br /><h4>Manual Script Demo:</h4>
-
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/-b0lPcI72mY"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
-
-									<br /><br />
-									<ul><a href="../index.html#three" class="button">Back</a></ul>
+			<h4>Slave Subsystem (Tiva-C):</h4>
+			<ul>
+				<li>Receives control commands over UART, confirms with ACK/NAK protocol.</li>
+				<li>Generates precise motor control signals using Tiva-C hardware <strong>PWM modules and motor drivers</strong>.</li>
+				<li>Implements encoder-based odometry using interrupt-driven counting for position estimation.</li>
+				<li>Integrates data from <strong>IMU</strong> for drift correction and motion profiling.</li>
+				<li>Reads distance data from IR sensors for obstacle detection and safe navigation.</li>
+			</ul>
 
 
+			<br /><br />
 
-								</div>
-							</section>
+			<h4>System Architecture Overview:</h4>
+			<img src="../images/I_Mate.jpg" alt="Earth Rover Architecture" />
+
+		</p>
+
+		<h4>Face Recognition Demo:</h4>
+		<div class="iframe-container">
+			<iframe width="720" height="480" src="https://www.youtube.com/embed/3xV7suU-WI8"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		</div>
+
+		<br />
+
+		<h4>Manual Script Control Demo:</h4>
+		<div class="iframe-container">
+			<iframe width="720" height="480" src="https://www.youtube.com/embed/-b0lPcI72mY"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		</div>
+
+		<br /><br />
+		<ul><a href="../index.html#three" class="button">Back</a></ul>
+	</div>
+</section>
+
 
 
 

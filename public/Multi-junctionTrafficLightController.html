@@ -18,14 +18,14 @@
 				<header>
 					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
-					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br /></p>
 				</header>
 				<nav id="nav">
 					<ul>
 					</ul>
 				</nav>
 				<footer>
-					<div class="copy-box">COPIED!</div> 
+					<div class="copy-box">COPIED!</div>
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -42,128 +42,98 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="image main" data-position="bottom" >
-									<img src="../images/Kernel.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h3>Multi-junction Traffic Light Controller</h3>
-									</header>
-									<p>
-										This project aims at building a realistic prototype for intelligent transportation system (ITS).
-										A prototype for road intersection was built accompanied with a software that controls traffic
-										light based on the behaviour of pedestrians, vehicles and nearby train.
-
-										<ul class="feature-icons">
-											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Multi-junction_Traffic_Light_Controller" target="_blank">Project link on Github</a></li>
-										</ul>
-
-										<h4>Project Specifications and Description :</h4>
-										1. The project consists of the main frame, four traffic lights, 4 push buttons for pedestrian, 2
-										push buttons for the train, siren, and servo motor. The frame consists of two main roads
-										north-south and east-west plus train road which is parallel to east-west road.
-
-										<br /><br />
-
-										2. Because the two roads are perpendicular, we must stop one road and leave the other
-										running then vice versa. The running time of north-south road is 5 seconds, and the running
-										time of east-west is 2.5 seconds. Also, the gate must be vertical.
-
-										<br /><br />
-
-										3. Adding to the scenario pedestrians, now adding a push button beside each traffic lights to
-										give a signal to the controller so, it stops the road until pedestrians move to the other side.
-										If someone press the push buttons while the road is already is blocked nothing will happen,
-										but if the road is running now the controller must stop the road for pedestrians.
-
-										<br /><br />
-
-										4. The last scenario is the train, when the train press the push button it gives a signal to the
-										controller so, the controller starts to flash the red lights for all traffic lights with frequency
-										of 1 second and the gate must be horizontal, and the siren starts to work. The train road is
-										2 way so the train can approach from east to west or west to east. Then the first push button
-										indicates the approach of the train and the second one the departure of the train. The gate
-										will back to normal mode if time between pressing two switches must be great than 20
-										seconds.
-
-
-										<br /><br />
-
-										<h4>Drivers used to cover the requirements:</h4>
-										1. FreeRTOS to manage the four tasks.<br />
-										2. Binary semaphore for each task plus interrupts from switches to save power.<br />
-										3. GPTM Timer to generate the PWM for the servo motor.<br />
-										4. GPTM to create timer to create 20, 5, and 2.5 seconds.
-
-
-										<br /><br />
-
-										<h4>Design details, operation manual:</h4>
-										Case (1): Pressing the reset button in the tiva c itself must run the model in the normal
-										mode.<br />
-
-										Case (2): Pressing the pedestrian push button while the traffic light is red, nothing must
-										happen.
-
-										Case (3): Pressing the pedestrian push button while the traffic light is green, the green
-										light must turn into red.<br />
-
-										Case (4): Trying sequence of push buttons.<br />
-
-										Case (5): Pressing more than one push button at the same time.<br />
-
-										Case (6): Pressing the west button of the train this must close the gate and flash the red
-										lights.<br />
-
-										Case (7): Pressing the east button before cross time, the gate must be still closed.<br />
-
-										Case (8): Pressing the east button after cross time, the gate will open.<br />
-
-										Case (9): The reverse the last two cases.
-
-
-
-										<br /><br />
-
-										<h4>System Architecture:</h4>
-										<img src="../images/System_Architecture.jpg" alt="" />
-
-										<br /><br />
-
-										<h4>Model Used:</h4>
-										<img src="../images/Traffic_Model.jpg" alt="" />
-
-
-									</p>
-									<h4>Navigate Through Gate:</h4>
-
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/V_1oMLNyIGc"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
-									<br /><br />
-									<ul><a href="../index.html#three" class="button">Back</a></ul>
-
-
-
-								</div>
-							</section>
-
-
-
-					</div>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="container">
-							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				<div class="image main" data-position="bottom">
+					<img src="../images/Kernel.jpg" alt="Traffic Light Controller Hardware" />
+				</div>
+				<div class="container">
+					<header class="major">
+						<h3>Multi-junction Traffic Light Controller</h3>
+					</header>
+					<p>
+						This project demonstrates a prototype for an <strong>Intelligent Transportation System (ITS)</strong> by implementing a 
+						realistic <strong>multi-junction traffic light controller</strong>. The design integrates road intersections with 
+						pedestrian crossings and a railway line, coordinated through real-time embedded software to manage traffic flow, 
+						pedestrian safety, and train priority.
+						<br /><br />
+						The hardware prototype includes:
+					</p>
+					<ul>
+						<li>Four traffic light modules (north-south, east-west).</li>
+						<li>Four pedestrian push-buttons linked to each light.</li>
+						<li>Two train push-buttons (approach and departure sensors).</li>
+						<li>Servo-motor controlled railway crossing gate.</li>
+						<li>Audible siren for train approach alerts.</li>
+					</ul>
+					<ul class="feature-icons">
+						<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Multi-junction_Traffic_Light_Controller" target="_blank">Project Link on GitHub</a></li>
+					</ul>
+					<br />
+					<h4>System Behavior</h4>
+					<ol>
+						<li><strong>Road Priority:</strong> Because the two main roads are perpendicular, one road is active at a time (NS: 5s, EW: 2.5s).</li>
+						<li><strong>Pedestrian Crossing:</strong> A button press while the signal is green interrupts the current phase, halts vehicles, and activates pedestrian crossing mode.</li>
+						<li><strong>Train Priority:</strong> When the train approach button is pressed, all traffic lights flash red at 1 Hz, the siren is activated, and the gate is lowered.</li>
+						<li><strong>Train Departure:</strong> After 20s (minimum crossing time) and confirmation of departure via second push-button, the system resumes normal operation.</li>
+					</ol>
+					<br />
+					<h4>Embedded System Design</h4>
+					<p>
+						To meet real-time constraints, the project was implemented using:
+					</p>
+					<ul>
+						<li><strong>FreeRTOS Kernel:</strong> Used to schedule and manage four concurrent tasks (traffic control, pedestrian service, train handling, and gate control).</li>
+						<li><strong>Binary Semaphores & Interrupts:</strong> Switch inputs (pedestrian/train) trigger interrupts, signaling tasks via semaphores — enabling responsive, low-power operation.</li>
+						<li><strong>General-Purpose Timers (GPTM):</strong>
+							<ul>
+								<li>PWM generation for servo motor controlling the railway gate.</li>
+								<li>Timing services for light cycles (20s, 5s, and 2.5s).</li>
 							</ul>
-						</div>
-					</section>
+						</li>
+						<li><strong>Deterministic Scheduling:</strong> Priority-based task execution ensured train events always preempt road/ pedestrian cycles, reflecting real-world ITS safety requirements.</li>
+					</ul>
+					<br />
+					<h4>Test Scenarios (Operation Manual)</h4>
+					<ul>
+						<li><strong>Reset:</strong> System boots into normal cycle mode (default scheduling).</li>
+						<li><strong>Pedestrian request on red:</strong> Ignored by the system (no effect).</li>
+						<li><strong>Pedestrian request on green:</strong> Vehicle lights transition to red, pedestrian signal activated.</li>
+						<li><strong>Multiple simultaneous requests:</strong> Prioritized based on real-time task hierarchy.</li>
+						<li><strong>Train approach:</strong> Gate closes, red lights flash, siren engages.</li>
+						<li><strong>Early departure signal:</strong> Ignored until crossing time expires.</li>
+						<li><strong>Valid departure signal (post 20s):</strong> Gate opens, lights return to normal sequence.</li>
+					</ul>
+					<br />
+					<h4>System Architecture:</h4>
+					<img src="../images/System_Architecture.jpg" alt="System Architecture Diagram" />
+					<br /><br />
+					<h4>Prototype Model:</h4>
+					<img src="../images/Traffic_Model.jpg" alt="Physical Prototype of Traffic Model" />
 
+					<h4>Live Demonstration:</h4>
+    <div class="iframe-container">
+        <iframe width="720" height="480" src="https://www.youtube.com/embed/V_1oMLNyIGc"
+            title="Traffic Light Controller Demo" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    </div>
+    <br /><br />
+    <div>
+        <a href="../index.html#three" class="button">Back</a>
+    </div>
+</div>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
 			</div>
+		</section>
+	</div>
 
 		<!-- Scripts -->
 			<script src="../assets/js/jquery.min.js"></script>

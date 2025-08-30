@@ -18,14 +18,14 @@
 				<header>
 					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
-					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br /></p>
 				</header>
 				<nav id="nav">
 					<ul>
 					</ul>
 				</nav>
 				<footer>
-					<div class="copy-box">COPIED!</div> 
+					<div class="copy-box">COPIED!</div>
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -42,84 +42,109 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="image main" data-position="bottom" >
-									<img src="../images/Closed_Loop.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h2>Telemetry & Data Logger</h2>
-									</header>
-									<p>
-										The telemetry and data logger system is used to log the output signal from any physical system.
-										The system sniffs the data travelling between the microcontroller and different sensors through UART bus.
-										This data is logged  in csv files and is later used to estimate a mathematical model (transfer function) of the physical
-										system and/or validating the control process. To test the telementry system, I built my own steering-by-wire physical connection which is described below:
+	<div class="image main" data-position="bottom">
+		<img src="../images/Closed_Loop.jpg" alt="Closed-loop PID setup" />
+	</div>
+	<div class="container">
+		<header class="major">
+			<h3>Telemetry & Data Logger with Closed-Loop System Identification</h3>
+		</header>
+		<p>
+			This project focused on developing a custom <strong>telemetry and data logging system</strong> for capturing and analyzing real-time signals 
+			from embedded control systems. The system is designed to intercept and record data communicated over the <strong>UART bus</strong> between a 
+			microcontroller and its connected sensors or actuators. It logs live telemetry into structured <strong>CSV files</strong> for post-processing 
+			and control system evaluation.
 
-										<br /><br />
+			<br /><br />
 
-										Steering-by-wire project aims to build a physical connector to control a wheel using 12 Volt dc motor. We test the project
-										with increasing voltages and log the responses using the telemetry and data logger system. This data is fed to matlab's
-										identification toolbox to estimate the transfer function of the system. Now that we have a mathematical model of the physical
-										process, we can either apply open loop PID and measure the accuracy using same data logger or add feedback signal and carry closed
-										loop PID to accomplish better accuracy and adapt any disturbance and achieve better position control.
+			The primary application was built around a prototype <strong>steering-by-wire system</strong>, which emulates electronically controlled steering 
+			using a 12V DC motor. The system was subjected to open-loop step inputs and closed-loop feedback control to characterize its behavior. 
+			Acquired data was analyzed using <strong>MATLAB’s System Identification Toolbox</strong> to estimate a reliable transfer function model of the physical process.
 
-										<ul class="feature-icons">
-											<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Telemetry-Data-Logger" target="_blank">Project link on Github</a></li>
-										</ul>
+			<br /><br />
 
-										<h4>The Process of System Identification:</h4>
-										1. Measure the input and output signals from your system in time or frequency domain.<br />
-										2. Select a model structure.
-										3. Apply an estimation method to estimate values for the adjustable parameters in<br />
-										the candidate model structure.
-										4. Evaluate the estimated model to see if the model is adequate for your application needs.
+			<h4>Embedded Design & Features</h4>
+			<ul>
+				<li>Embedded firmware written in C/C++ running on an <strong>STM32 microcontroller</strong> using <strong>bare-metal programming</strong> (HAL drivers) to 
+					handle UART interrupts and data parsing.</li>
+				<li>Logged parameters included control input (voltage/PWM), motor angular position, and current feedback at fixed sampling intervals.</li>
+				<li>Implemented <strong>ring buffer</strong> for efficient UART packet handling and <strong>DMA-based logging</strong> to minimize CPU overhead.</li>
+				<li>Developed a lightweight host application in Python to parse serial logs and store them in timestamped CSV files.</li>
+				<li>Integrated <strong>signal processing filters</strong> (moving average and weighted moving average) to eliminate high-frequency sensor noise.</li>
+			</ul>
 
-										<br /><br />
+			<br />
 
-										<h4>Output Response For Step Input:</h4>
-										<img src="../images/Response.jpg" alt="" />
+			<h4>Steering-by-Wire Prototype</h4>
+			To validate the data logger’s functionality, a hardware-in-the-loop steering model was developed using:
+			<ul>
+				<li>Brushed DC motor (12V) with encoder feedback.</li>
+				<li>Linear potentiometer for position feedback.</li>
+				<li>Open-loop and closed-loop control via <strong>PID algorithm</strong> implemented on STM32.</li>
+				<li>Telemetry logging used to compare actual vs. target trajectory and validate dynamic system performance.</li>
+			</ul>
 
-										<br /><br />
+			<br />
 
-										<h4>Processing The Generated Data:</h4>
-										<img src="../images/moving_avg_filter.jpg" alt="" />
-										<br />
-										<img src="../images/weighted_moving_avg_filter.jpg" alt="" />
+			<h4>System Identification Workflow</h4>
+			1. Apply known step inputs and capture real-time system response using the telemetry logger.<br />
+			2. Import the dataset into MATLAB and process it using signal conditioning filters.<br />
+			3. Use the <strong>System Identification Toolbox</strong> to fit a transfer function or state-space model.<br />
+			4. Evaluate model fidelity by comparing simulation output to real measured data.<br />
+			5. Re-run experiments with <strong>closed-loop PID control</strong> for validation and stability analysis.
 
-										<br /><br />
+			<ul class="feature-icons">
+				<li class="icon brands fa-github"><a href="https://github.com/mossad1998/Telemetry-Data-Logger" target="_blank">View Project on GitHub</a></li>
+			</ul>
 
-										<h4>Generating The Transfer Function:</h4>
-										<img src="../images/transfer_function.jpg" alt="" />
+			<br />
 
-										<br /><br />
+			<h4>Output Response for Step Input (Open-Loop Test):</h4>
+			<img src="../images/Response.jpg" alt="Step response data" />
 
-										<h4>Validation Iteration:</h4>
-										<img src="../images/open_loop.jpg" alt="" />
+			<br /><br />
 
-									</p>
-									<h4>Closed Loop PID (the output follows the input):</h4>
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/zaBpgE3_Rx0"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
+			<h4>Signal Conditioning – Filtering the Data:</h4>
+			<img src="../images/moving_avg_filter.jpg" alt="Moving average filter" /><br />
+			<img src="../images/weighted_moving_avg_filter.jpg" alt="Weighted moving average filter" />
 
-									<br /><br />
+			<br /><br />
 
-									<h4>Steering By Wire Demo:</h4>
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/yXptVc-6PnM"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
+			<h4>Estimated Transfer Function Using MATLAB:</h4>
+			<img src="../images/transfer_function.jpg" alt="Transfer function plot" />
 
-									<br /><br />
-									<ul><a href="../index.html#three" class="button">Back</a></ul>
+			<br /><br />
 
+			<h4>Open-Loop System Validation:</h4>
+			<img src="../images/open_loop.jpg" alt="Open-loop validation result" />
+		</p>
 
+		<h4>Closed-Loop PID Control Demo (Output Tracks Input):</h4>
+		<div class="iframe-container">
+			<iframe width="720" height="480" src="https://www.youtube.com/embed/zaBpgE3_Rx0"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		</div>
 
-								</div>
-							</section>
+		<br /><br />
+
+		<h4>Steering-by-Wire Prototype Demo:</h4>
+		<div class="iframe-container">
+			<iframe width="720" height="480" src="https://www.youtube.com/embed/yXptVc-6PnM"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		</div>
+
+		<br /><br />
+
+		<div>
+			<a href="../index.html#three" class="button">Back</a>
+		</div>
+	</div>
+</section>
+
 
 
 

@@ -18,14 +18,14 @@
 				<header>
 					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
-					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br /></p>
 				</header>
 				<nav id="nav">
 					<ul>
 					</ul>
 				</nav>
 				<footer>
-					<div class="copy-box">COPIED!</div> 
+					<div class="copy-box">COPIED!</div>
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -41,91 +41,76 @@
 					<div id="main">
 
 						<!-- One -->
-							<section id="one">
-								<div class="image main" data-position="bottom" >
-									<img src="../images/ROV.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h3>Remotely Operated Vehicle</h3>
-									</header>
-									<p>
-										This project aimed at building remotely operated vehicle (ROV) to participate in Mate ROV international competition
-										at U.S. I was responsible for building the hadware kit and the telematics control unit (TCU).
-
-										<br />
-
-										<h4>TCU Carries 3 Main Parts:</h4>
-										1.Power supplies to feed the vehicle with 1440 watt.<br />
-										2.Control unit contain the joystick, operational switches, and kill switch.<br />
-										3.Pilot screens that display the stream of different cameras and dashboard that indicates the vehicle status.
-
-										<br /><br />
-
-										<h4>Hardware Kit Main Functionalties:</h4>
-										1.Carrying DC-DC conversion to step down the power received though tether from 48 to 12 volt.<br />
-										2.Distributing the power to different ESCs, Servos, and MCUs.<br />
-										3.Re-trasmitting the cameras' stream and send it through ethernet to the TCU PC using UDP protocol.<br />
-										4.Sending control and status frames from TCU to the vehicle through ethernet.
-
-										<br /><br />
-
-										<h4>ROV accomplished the following missions:</h4>
-										1.Using flight data to determine the search zone for the wreckage.<br />
-										2.Removing debris from the engine using a lift bag.<br />
-										3.Returning the engine to the surface side of the pool using a lift bag.<br />
-										4.Using tidal data and nautical chart to determine the optimum location for a tidal turbine.<br />
-										5.Installing a tidal turbine in the optimum location.
-
-
-										<br /><br />
-
-										<h4>Mechanical Frame:</h4>
-										<img src="../images/ROV_Mechanical.jpg" alt="" />
-
-										<br /><br />
-
-										<h4>Electrical Kit Control Side:</h4>
-										<img src="../images/Signals_Side.JPG" alt="" />
-
-
-										<br /><br />
-
-										<h4>Electrical Kit Power Side:</h4>
-										<img src="../images/ESCs_Side.jpg" alt="" />
-
-
-									</p>
-									<h4>Navigate Through Gate:</h4>
-									
-									<div class="iframe-container">
-
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/gzkdi-V-adM"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div>
-
+						<section id="one">
+							<div class="image main" data-position="bottom">
+								<img src="../images/ROV.jpg" alt="Remotely Operated Vehicle" />
+							</div>
+							<div class="container">
+								<header class="major">
+									<h3>Remotely Operated Vehicle (ROV)</h3>
+								</header>
+								<p>
+									This project focused on building a <strong>Remotely Operated Vehicle (ROV)</strong> to compete in the <strong>MATE International ROV Competition</strong> in the U.S.  
+									I was responsible for designing and implementing both the <strong>hardware kit</strong> and the <strong>Telematics Control Unit (TCU)</strong>, 
+									which formed the backbone of the vehicle’s embedded systems and operator interface.
 									<br /><br />
-									<ul><a href="../index.html#three" class="button">Back</a></ul>
+									<h4>Telematics Control Unit (TCU) – Core Components</h4>
+									<ol>
+										<li><strong>Power Subsystem:</strong> Delivered up to <strong>1440 W</strong> to support motors, control electronics, and auxiliary payloads.</li>
+										<li><strong>Control Console:</strong> Integrated joystick, operational toggles, and a hardware-based kill switch for immediate safety shutdown.</li>
+										<li><strong>Pilot Interface:</strong> Multi-screen station displaying real-time video streams and telemetry dashboards (depth, power usage, and sensor data).</li>
+									</ol>
+									<br />
+									<h4>Hardware Kit – Embedded & Networking Functionalities</h4>
+									<ul>
+										<li>Designed a <strong>DC-DC power stage</strong> to step down 48V tethered supply to regulated 12V rails for ESCs, servos, and MCUs.</li>
+										<li>Implemented <strong>power distribution bus</strong> with current monitoring and protection circuitry for reliable operation.</li>
+										<li>Re-transmitted live video feeds from multiple cameras via <strong>Ethernet (UDP streaming)</strong> to the TCU operator station.</li>
+										<li>Designed an <strong>Ethernet-based control protocol</strong> to send command frames and receive feedback/status packets in real time.</li>
+										<li>Integrated embedded controllers (MCUs) for actuator control and sensor fusion, interfacing via UART, PWM, and SPI buses.</li>
+									</ul>
+									<br />
+									<h4>ROV Missions Successfully Executed</h4>
+									1. Used simulated flight data to determine wreckage search zones.<br />
+									2. Removed debris from a submerged engine using lift bags.<br />
+									3. Transported and returned the engine to the surface using buoyancy-assisted mechanisms.<br />
+									4. Processed tidal data and nautical charts to determine the optimal turbine installation site.<br />
+									5. Installed a mock tidal turbine at the identified optimal location.<br />
+									<br /><br />
+									<h4>Mechanical Frame</h4>
+									<img src="../images/ROV_Mechanical.jpg" alt="ROV Mechanical Frame" />
+									<br /><br />
+									<h4>Electrical Kit – Control Side</h4>
+									<img src="../images/Signals_Side.JPG" alt="ROV Electrical Control Side" />
+									<br /><br />
+									<h4>Electrical Kit – Power Side</h4>
+									<img src="../images/ESCs_Side.jpg" alt="ROV Electrical Power Side" />
+								</p>
 
-
-
+								<h4>Live Demonstration</h4>
+								<div class="iframe-container">
+									<iframe width="720" height="480" src="https://www.youtube.com/embed/gzkdi-V-adM"
+										title="ROV Demonstration" frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+									</iframe>
 								</div>
-							</section>
-
-
-
+								<br /><br />
+								<div>
+									<a href="../index.html#three" class="button">Back</a>
+								</div>
+							</div>
+						</section>
 					</div>
 
 				<!-- Footer -->
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
-
 			</div>
 
 		<!-- Scripts -->

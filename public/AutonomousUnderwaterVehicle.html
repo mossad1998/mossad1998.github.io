@@ -18,14 +18,14 @@
 				<header>
 					<span class="image avatar"><img src="../images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Mohamed Mosad Eldebany</a></h1>
-					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br />
+					<p>I am Mohamed Eldebany<br /> and this is my portfolio<br /></p>
 				</header>
 				<nav id="nav">
 					<ul>
 					</ul>
 				</nav>
 				<footer>
-					<div class="copy-box">COPIED!</div> 
+					<div class="copy-box">COPIED!</div>
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/mohamed-eldebany-15b334131/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 						<li><a href="https://github.com/mossad1998" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
@@ -42,77 +42,116 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="image main" data-position="bottom" >
-									<img src="../images/AUV_Water.jpg" alt="" />
-								</div>
-								<div class="container">
-									<header class="major">
-										<h3>Autonomous Underwater Vehicle</h3>
-									</header>
-									<p>
-										This project aimed at building autonomous underwater vehicle (AUV)
-										to represent Ain shams university in RoboSub international competition at the U.S. Navy Space and Naval Warfare Systems Center
-										Pacific's TRANSDEC Anechoic pool in San Diego, California. The team consisted of 30 members divided into three groups.
-										I was the leader of electrical engineering group making my way as the youngest group leader in the entire school of engineering.
-										We are proud to be the only team participating from the Middle East.
+	<div class="image main" data-position="bottom">
+		<img src="../images/AUV_Water.jpg" alt="AUV in water" />
+	</div>
+	<div class="container">
+		<header class="major">
+			<h3>Autonomous Underwater Vehicle (AUV)</h3>
+		</header>
+		<p>
+			This project entailed the end-to-end development of an Autonomous Underwater Vehicle (AUV) to represent Ain Shams University at the
+			<strong>RoboSub International Competition</strong>, hosted by the U.S. Navy's SPAWAR Systems Center at the TRANSDEC Anechoic Test Facility
+			in San Diego, California. Our team of 30 engineering students was divided into three main divisions: Mechanical, Software, and Electrical.
+			I led the <strong>Electrical and Embedded Systems Division</strong>—becoming the youngest team lead in the School of Engineering.
+			We were the <strong>only team from the Middle East</strong> to participate in this globally recognized competition.
+		</p>
+		<br />
+		<p>
+			My contributions focused on the architecture, design, and integration of the AUV's <strong>real-time embedded systems, power electronics,
+			and digital communication frameworks</strong>. I also designed and led a comprehensive <strong>3-month onboarding program</strong>
+			for new members, covering advanced embedded topics including protocol stack implementation, ADC/DAC interfacing, communication protocols, and
+			real-time diagnostics.
+		</p>
+		<br />
 
+		<h4>System Architecture & Embedded Subsystems</h4>
+		<p>
+			The core deliverable of our division was a fully integrated <strong>Electrical Kit</strong>, engineered around a modular and noise-isolated architecture,
+			divided into two domains:
+		</p>
+		<ul>
+			<li>
+				<strong>Power Management Domain:</strong><br />
+				Designed a custom power delivery and protection system using <strong>DC-DC buck converters, MOSFET switching circuits, and resettable fuses</strong>.
+				The system included:
+				<ul>
+					<li>High-efficiency power buses at 12V, 5V, and 3.3V rails.</li>
+					<li>Power routing to BLDC motors through ESCs with soft-start and overcurrent protection.</li>
+					<li>Load balancing and current monitoring via shunt resistors and sensors interfaced over I²C.</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Control and Processing Domain:</strong><br />
+				Developed a multi-layered embedded system stack incorporating:
+				<ul>
+					<li><strong>NVIDIA Jetson Nano</strong> for high-level autonomy, computer vision, and mission logic (running ROS).</li>
+					<li><strong>STM32 and Arduino Nano</strong> for low-level actuator control and sensor data acquisition, programmed via
+						bare-metal C++ and FreeRTOS where appropriate.</li>
+					<li><strong>Serial communication protocols:</strong> Implemented robust UART and I²C bridges for inter-microcontroller messaging
+						with CRC validation and watchdog timers.</li>
+					<li>Sensor suite including <strong>IMU, barometer, and cameras</strong> for environmental awareness and dead-reckoning navigation.</li>
+					<li>Pulse-width modulation (PWM) control for servos and motor outputs with coorect timing resolution.</li>
+				</ul>
+			</li>
+		</ul>
+		<p>
+			To maintain integrity between both domains, the architecture used <strong>galvanic isolation (opto-isolators)</strong> between high-power and logic-level subsystems,
+			and careful PCB layout separation to prevent EMI propagation and thermal coupling.
+		</p>
+		<br />
 
-										<br /><br />
+		<h4>Software-Defined Behavior & Real-Time Capabilities</h4>
+		<ul>
+			<li>Implemented <strong>mission planner logic using finite state machines (FSMs)</strong> integrated into the Jetson's ROS node hierarchy.</li>
+			<li>Developed a <strong>diagnostic telemetry module</strong> that streamed live system vitals (voltage, current, temperature, fault codes) to a
+				surface station GUI via a custom UART-to-Ethernet bridge.</li>
+			<li>Established a <strong>modular bootloader for STM32 MCUs</strong> to allow field-upgradable firmware during development and test cycles.</li>
+			<li>Used <strong>Git for version control</strong> and <strong>KiCad/Altium</strong> for circuit schematic capture and PCB layout.</li>
+		</ul>
+		<br />
 
-										My repsposibilities inclouded hardware-software interface, and power electronics. Moreover, I was reposible for training new
-										group members by coducting 3 monthes workshop on communication protocols.
-										the output of my group was the electrical kit considered as the heart of the vehicle.
-										the kit is divided into two sides power side and control side.
-										this technique helps in elemenating noise and heat to propagate from power side to control side.
-										power side carries the power distributions system for different ESCs,  servos and DC converters.
-										control side carries different MCUs such as arduino and jetson board, sensors, and camers.
+		<h4>Mission Execution Capabilities (Accomplished in Competition):</h4>
+		<ol>
+			<li>Navigate autonomously from dock to mission zone using compass + dead-reckoning.</li>
+			<li>Traverse an obstacle field via depth and IMU feedback.</li>
+			<li>Drop weighted markers on detected visual targets.</li>
+			<li>Fire pneumatic torpedoes at buoy targets identified via color segmentation.</li>
+			<li>Localize acoustic pingers using a four-hydrophone array, retrieve a mock payload, and deposit it in a designated zone.</li>
+		</ol>
+		<br />
 
-										<br />
+		<h4>Mechanical Frame:</h4>
+		<img src="../images/AUV_Mechanical.jpg" alt="Mechanical Frame" />
+		<br />
 
-										<h4>AUV accomplished the following missions:</h4>
-										1.Navigate from the dock to release buoys.<br />
-										2.Pass over an obstacle course.<br />
-										3.Drop markers on specific locations.<br />
-										4.Shoot torpedoes on specific colored buoys.<br />
-										5.Find a pinger using hydrophone, grab an object and move/release the object.
+		<h4>Electrical Kit – Control Side:</h4>
+		<img src="../images/Electrical_kit_Jetson.jpg" alt="Electrical Kit Control Side" />
+		<br />
 
+		<h4>Electrical Kit – Power Side:</h4>
+		<img src="../images/Electrical_Kit.jpg" alt="Electrical Kit Power Side" />
+		<br />
 
-										<br /><br />
+		<h4>Final AUV Assembly:</h4>
+		<img src="../images/AUV_Vehicle.jpg" alt="Autonomous Underwater Vehicle" />
+		<br />
 
-										<h4>Mechanical Frame:</h4>
-										<img src="../images/AUV_Mechanical.jpg" alt="" />
+		<h4>Navigate Through Gate (Video Demo):</h4>
+		<div class="iframe-container">
+			<iframe width="720" height="480" src="https://www.youtube.com/embed/EgdIqItVc14"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+			</iframe>
+		</div>
+		<br />
 
-										<br /><br />
+		<div>
+			<a href="../index.html#three" class="button">Back</a>
+		</div>
+	</div>
+</section>
 
-										<h4>Electrical Kit Control Side:</h4>
-										<img src="../images/Electrical_kit_Jetson.jpg" alt="" />
-
-
-										<br /><br />
-
-										<h4>Electrical Kit Power Side:</h4>
-										<img src="../images/Electrical_Kit.jpg" alt="" />
-
-										<br /><br />
-										<h4>Autonomous Underwater Vehicle:</h4>
-										<img src="../images/AUV_Vehicle.jpg" alt="" />
-
-									</p>
-									<h4>Navigate Through Gate:</h4>
-									
-									<div class="iframe-container">
-										<iframe width="720" height="480" src="https://www.youtube.com/embed/EgdIqItVc14"
-												title="YouTube video player" frameborder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-									</div> 
-
-									<br /><br />
-									<ul><a href="../index.html#three" class="button">Back</a></ul>
-
-
-
-								</div>
-							</section>
 
 
 
